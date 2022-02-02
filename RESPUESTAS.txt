@@ -5,3 +5,13 @@ Parte 1.
 
 	2. Para optimizar el programa lo que se tiene que hacer es limitar la cantidad de llamadas por segundo del consumidor haciendo que se realice una petición cada
        	   500 milisegundos (10% de la velocidad del productor). 
+
+
+Parte 3. 
+	2. El juego funciona iterando sobre cada inmortal y este escoge un indice aleatorio para atacar, se realiza el ataque, se actualizan valores y se continua con 
+	   el ciclo. En este caso, la sumatoria de los puntos de vida debe ser igual a: número de jugadores * total de puntos de vida por jugador; para el caso default
+	   del ejercicio, se debe mantender una suma total de 300. 
+
+	3. El invariante no se cumple. 
+
+	
