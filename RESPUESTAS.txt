@@ -1,0 +1,6 @@
+Parte 1. 
+	1. El consumo se debe a que los hilos están desperdiciando recursos; la clase Consumer verifica la cola tan rápido como puede, mientras que la clase
+	   Producer crea un elemento cada segundo, lo que hace que consumer valide muchas veces el mismo estado. La clase responsable es la clase Consumer, pues
+	   hace muchos llamados innecesarios a la cola. 
+
+	2. 
