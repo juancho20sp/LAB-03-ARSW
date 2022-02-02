@@ -3,4 +3,5 @@ Parte 1.
 	   Producer crea un elemento cada segundo, lo que hace que consumer valide muchas veces el mismo estado. La clase responsable es la clase Consumer, pues
 	   hace muchos llamados innecesarios a la cola. 
 
-	2. 
+	2. Para optimizar el programa lo que se tiene que hacer es limitar la cantidad de llamadas por segundo del consumidor haciendo que se realice una petición cada
+       	   500 milisegundos (10% de la velocidad del productor). 
