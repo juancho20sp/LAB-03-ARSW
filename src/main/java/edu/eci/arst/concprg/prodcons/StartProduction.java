@@ -25,7 +25,7 @@ public class StartProduction {
         
         new Producer(queue,Long.MAX_VALUE).start();
         
-        //let the producer create products for 5 seconds (stock).
+        //let the producer create products for 5 seconds (stock).   
         try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
