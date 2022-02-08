@@ -20,6 +20,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JScrollBar;
 
 public class ControlFrame extends JFrame {
@@ -93,21 +94,18 @@ public class ControlFrame extends JFrame {
                 /*
 				 * COMPLETAR
                  */
-                int sum = 0;
+                AtomicInteger sum = new AtomicInteger(0);
+
                 for (Immortal im : immortals) {
                     synchronized (lock) {
-                        im.pauseImmortal();
+                        sum.addAndGet(im.getHealth());
                         System.out.println("aiudaaa");
-
+                        System.out.println(sum.get());
+                        im.pauseImmortal();
                     }
-                    sum += im.getHealth();
-                    System.out.println(sum);
                 }
 
                 statisticsLabel.setText("<html>"+immortals.toString()+"<br>Health sum:"+ sum);
-                
-                
-
             }
         });
         toolBar.add(btnPauseAndCheck);
@@ -119,6 +117,10 @@ public class ControlFrame extends JFrame {
                 /**
                  * IMPLEMENTAR
                  */
+                synchronized (lock) {
+                    System.out.println("notifyAll");
+                    lock.notifyAll();
+                }
 
             }
         });
